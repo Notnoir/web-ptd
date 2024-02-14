@@ -11,13 +11,6 @@
     Hello world!
     Hello world!
     Hello world!
-    Hello world
-
-    nambah jugaaa
-
-    Hello world!
-    Hello world!
-    Hello world!
     Hello world!
   </h1>
 
