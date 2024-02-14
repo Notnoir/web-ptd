@@ -9,11 +9,6 @@
 <body>
   <h1 class="text-3xl font-bold underline">
     Hello world!
-    Hello world!
-    Hello world!
-    Hello world!
-    aowkaokwokwao
-    kkkkkkkk
   </h1>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
