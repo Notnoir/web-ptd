@@ -21,8 +21,10 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('users.index')->with('status', 'User berhasil ditambahkan.');
+        return redirect()->route('/')->with('status', 'Selamat Datang');
     }
+
+    
 
     // public function display($id){
     //     $user = User::find($id);
