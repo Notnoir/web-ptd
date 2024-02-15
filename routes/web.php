@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
+Route::get('/users/create', 'UserController@create')->name('users.create');
