@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
   @vite(['resources/css/app.css','resources/js/app.js'])
+
+  {{-- awesomefont --}}
+  <link rel="stylesheet" href="{{ asset('fontawesome-free-6.5.1-web/css/all.min.css') }}">
+
 </head>
 <body>
   <section class="bg-gradient-to-b from-[#11001B] to-[#3f007d] min-h-screen flex items-center justify-center">
@@ -16,9 +20,12 @@
     
             <form action="" class="flex flex-col gap-4 mt-8">
                 <span class="text-white font-semibold">Email</span>
-                <input class="bg-transparent p-2 rounded-lg border -mt-3" type="text" name="email" placeholder="Email">
+                <input class="bg-transparent p-2 rounded-lg border -mt-3 focus:outline-none" type="text" name="email" placeholder="Email">
                 <span class="text-white font-semibold">Password</span>
-                <input class="bg-transparent p-2 rounded-lg border -mt-3" type="password" name="password" placeholder="Password">
+                <div class="flex flex-row bg-transparent rounded-lg border -mt-3">
+                  <input class="bg-transparent rounded-lg border-none outline-none focus:outline-none" id="password" type="password" name="password" placeholder="Password">
+                  <i class="fa-solid fa-eye-slash my-auto" id="pass-icon" onclick="pass()"></i>
+                </div>
                 <button class="bg-white text-black rounded-lg py-2 mt-5 hover:opacity-80 font-semibold">Login</button>
             </form>
 
@@ -35,5 +42,21 @@
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  <script>
+    var a;
+    function pass()
+    {
+      if(a==1)
+      {
+        document.getElementById('password').type='password';
+        a=0;
+      }
+      else
+      {
+        document.getElementById('password').type='text';
+        a=1;
+      }
+    }
+  </script>
 </body>
 </html>
