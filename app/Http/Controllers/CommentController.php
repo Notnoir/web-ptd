@@ -20,15 +20,15 @@ class CommentController extends Controller
         return redirect()->route('users.index')->with('status', 'User berhasil ditambahkan.');
     }
 
-    public function update(Request $request,$id) {
-        $data = Comment::find($id);
+    // public function update(Request $request,$id) {
+    //     $data = Comment::find($id);
 
-        $this->validate($request,[
-            'context'=>'required|custom:komentar tidak dapat di muat'
-        ]);
-        $data->content = $request->content;
-        $data->save;
+    //     $this->validate($request,[
+    //         'context'=>'required|custom:komentar tidak dapat di muat'
+    //     ]);
+    //     $data->content = $request->content;
+    //     $data->save;
 
-        return redirect()->route('users.index')->with('status', 'Komentar berhasil diubah.');
-    }
+    //     return redirect()->route('users.index')->with('status', 'Komentar berhasil diubah.');
+    // }
 }

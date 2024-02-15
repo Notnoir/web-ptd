@@ -24,29 +24,29 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('status', 'User berhasil ditambahkan.');
     }
 
-    public function display($id){
-        $user = User::find($id);
-        return redirect()->route('users.profile')->with('status', 'Berikut profile anda');
-    }
+    // public function display($id){
+    //     $user = User::find($id);
+    //     return view('user.index', compact('user'));
+    // }
 
-    public function update(Request $request, $id)
-    {
-        $user = User::find($id);
+    // public function update(Request $request, $id)
+    // {
+    //     $user = User::find($id);
 
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'password' => 'nullable|string|min:8|confirmed',
-        ]);
+    //     $this->validate($request, [
+    //         'name' => 'required|string|max:255',
+    //         'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+    //         'password' => 'nullable|string|min:8|confirmed',
+    //     ]);
 
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    //     $user->update([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'password' => Hash::make($request->password),
+    //     ]);
 
-        return redirect()->route('users.index')->with('status', 'User berhasil diubah.');
-    }
+    //     return redirect()->route('users.index')->with('status', 'User berhasil diubah.');
+    // }
 
 
 }
