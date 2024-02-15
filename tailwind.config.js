@@ -7,6 +7,13 @@ module.exports = {
     ],
     theme: {
         extend: {},
+        container: {
+            center: true,
+            padding: {
+                DEFAULT: "20px",
+                md: "50px",
+            },
+        },
     },
     plugins: [require("flowbite/plugin")],
 };

@@ -19,6 +19,18 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+Route::get('/about', function () {
+    return view('about');
+});
+
+// login register
+Route::get('/login', function () {
+    return view('users.login');
+});
+Route::get('/register', function () {
+    return view('users.register');
+});
+
 Route::get('/users/create', 'UserController@create')->name('users.create');
 Route::get('/comment/create', 'UserController@create')->name('users.create');
 Route::get('/comment/reply/{id}', '@create')->name('users.create');
