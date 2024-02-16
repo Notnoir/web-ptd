@@ -27,7 +27,7 @@
                 <span class="text-white font-semibold">Password</span>
                 <div class="flex flex-row bg-transparent rounded-lg border -mt-3">
                   <input class="bg-transparent rounded-lg border-none outline-none focus:outline-none" id="password" type="password" name="password" placeholder="Password">
-                  <i class="fa-solid fa-eye-slash my-auto" id="pass-icon" onclick="pass()"></i>
+                  <i class="fa-solid fa-eye-slash my-auto mx-auto" id="pass-icon" onclick="pass()"></i>
                 </div>
                 <button class="bg-white text-black rounded-lg py-2 mt-5 hover:opacity-80 font-semibold" type="submit">Daftar</button>
             </form>
