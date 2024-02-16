@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="bg-gradient-to-b from-[#11001B] to-[#6000c0] min-h-screen flex items-center justify-center text-white relative">
+    <section class="bg-gradient-to-b from-[#000000] to-[#210034] min-h-screen flex items-center justify-center text-white relative">
         <div class="container py-20">
             <div class="flex flex-col items-center z-20 md:flex-row">
                 <div class="text-white mb-12 md:text-left md:w-1/2 md:pr-10">

@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="bg-gradient-to-b from-[#11001B] to-[#6000c0] min-h-screen flex items-center justify-center text-white relative">
+    <section class="bg-gradient-to-b from-[#000000] to-[#210034] min-h-screen flex items-center justify-center text-white relative">
         <div class="container py-20 mt-16">
-            <div class="flex flex-col items-center z-20 md:flex-row">
+            <div class="flex flex-col items-center justify-center z-20 md:flex-row">
                 <div class="text-white mb-12 md:text-left md:w-1/2 md:pr-10">
                     <h1 class="title mb-4 font-semibold text-2xl">Cyber Security</h1>
                     <p class="leading-tight text-7xl mb-3">Your data is your power, and it needs to be protected</p>
@@ -12,7 +12,7 @@
                 </div>
     
                 <div class="md:w-1/2">
-                    <img src="/img/hero1.png" alt="" />
+                    <img src="/img/login1.png" class="rounded-3xl" width="600px" alt="" />
                 </div>
             </div>
         </div>
