@@ -13,8 +13,8 @@
 <body>
   <section class="bg-gradient-to-b from-[#11001B] to-[#3f007d] min-h-screen flex items-center justify-center">
 
-    <div class="bg-gradient-to-r from-[#11001B] to-[#470b83] flex rounded-2xl shadow-lg max-w-3xl p-5">
-        <div class="sm:w-1/2 px-16 text-white">
+    <div class="bg-gradient-to-r from-[#11001B] to-[#470b83] flex rounded-2xl shadow-lg max-w-3xl">
+        <div class="sm:w-1/2 px-16 text-white p-5">
             <h2 class="font-bold text-2xl">Login</h2>
             <p class="text-sm mt-4">Jika sudah memiliki akun, silahkan login.</p>
     
@@ -36,7 +36,7 @@
         </div>
 
         <div class="sm:block hidden w-1/2">
-            <img class="rounded-2xl" src="/img/login2.png" alt="">
+            <img class="rounded-r-2xl" src="/img/login.jpeg" alt="">
         </div>
     </div>
   </section>
