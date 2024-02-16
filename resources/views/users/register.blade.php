@@ -17,10 +17,11 @@
         <div class="sm:w-1/2 px-16 text-white p-5">
             <h2 class="font-bold text-2xl">Daftar</h2>
             <p class="text-sm mt-4">Silahkan buat akun</p>
-    
-            <form action="" class="flex flex-col gap-4 mt-8">
+
+            <form action="{{ route('register.post') }}" method="post" class="flex flex-col gap-4 mt-8">
+                {{ csrf_field() }}
                 <span class="text-white font-semibold">Username</span>
-                <input class="bg-transparent p-2 rounded-lg border -mt-3" type="text" name="name" placeholder="Username">
+                <input class="bg-transparent p-2 rounded-lg border -mt-3" type="text" name="username" placeholder="Username">
                 <span class="text-white font-semibold">Email</span>
                 <input class="bg-transparent p-2 rounded-lg border -mt-3" type="text" name="email" placeholder="Email">
                 <span class="text-white font-semibold">Password</span>
@@ -28,7 +29,7 @@
                   <input class="bg-transparent rounded-lg border-none outline-none focus:outline-none" id="password" type="password" name="password" placeholder="Password">
                   <i class="fa-solid fa-eye-slash my-auto" id="pass-icon" onclick="pass()"></i>
                 </div>
-                <button class="bg-white text-black rounded-lg py-2 mt-5 hover:opacity-80 font-semibold">Daftar</button>
+                <button class="bg-white text-black rounded-lg py-2 mt-5 hover:opacity-80 font-semibold" type="submit">Daftar</button>
             </form>
 
             <div class="mt-5 text-xs flex justify-between items-center border-t py-4">

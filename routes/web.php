@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,6 @@ Route::get('/register', function () {
     return view('users.register');
 });
 
-Route::get('/users/create', 'UserController@create')->name('users.create');
-Route::get('/comment/create', 'UserController@create')->name('users.create');
-Route::get('/comment/reply/{id}', '@create')->name('users.create');
+Route::post('/register/post', [UserController::class, 'register'])->name('register.post');
+Route::get('/comment/create', 'UserController@create')->name('comment.create');
+Route::get('/comment/reply/{id}', '@create')->name('comment.reply');

@@ -3,28 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function store(Request $request)
+    public function register(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'birth_date' => 'required|date|before:2010-01-30|custom:Tanggal Lahir Tidak Valid',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8',
         ]);
 
         User::create([
-            'name' => $request->name,
+            'name' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('/')->with('status', 'Selamat Datang');
+        return redirect('/')->with('status', 'Selamat Datang');
     }
 
-    
+
 
     // public function display($id){
     //     $user = User::find($id);
