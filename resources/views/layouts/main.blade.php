@@ -28,6 +28,7 @@
 </head>
 <body>
     <header>
+        {{-- navbar --}}
         <nav class="bg-[#11001B] dark:bg-gray-900 fixed w-full z-20 top-0 start-00 dark:border-gray-600 bg-opacity-80 backdrop-blur-sm">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/dashboard" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -43,7 +44,7 @@
             </button>
             </div>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-transparent md:space-x-16 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-transparent md:space-x-16 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                 <a href="/dashboard" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
                 </li>
@@ -67,6 +68,33 @@
             @yield('content')
         </div>
     </main>
+
+    {{-- footer --}}
+    <footer class="bg-[#11001B]">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <a href="/dashboard" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                    <img src="/img/icon_web.png" class="h-8" alt="" />
+                </a>
+                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 dark:text-gray-400">
+                    <li>
+                        <a href="" class="hover:underline me-4 md:me-6">About</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:underline me-4 md:me-6">Licensing</a>
+                    </li>
+                    <li>
+                        <a href="" class="hover:underline">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <span class="block text-sm text-white sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
+        </div>
+    </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 

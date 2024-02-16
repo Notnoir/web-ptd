@@ -2,11 +2,12 @@
 
 @section('content')
     <section class="bg-gradient-to-b from-[#11001B] to-[#6000c0] min-h-screen flex items-center justify-center text-white relative">
-        <div class="container py-20 mt-16">
+        <div class="container py-20">
             <div class="flex flex-col items-center z-20 md:flex-row">
                 <div class="text-white mb-12 md:text-left md:w-1/2 md:pr-10">
                     <h1 class="title mb-4 font-bold text-4xl">Pengertian Cyber Security</h1>
-                    <p class="leading-relaxed mb-8 mt-8 text-xl">Cyber security atau keamanan Siber adalah praktik untuk melindungi sistem komputer, jaringan, perangkat, dan data dari ancaman dan serangan siber. Tujuannya adalah untuk mencegah akses yang tidak sah, merusak integritas data, dan melindungi privasi pengguna. Keamanan siber mencakup berbagai aspek dan teknik untuk mengidentifikasi, melindungi, mendeteksi, merespon, dan memulihkan dari ancaman siber.</p>
+                    <p class="leading-relaxed mt-8 text-xl">Cyber security atau keamanan Siber adalah praktik untuk melindungi sistem komputer, jaringan, perangkat, dan data dari ancaman dan serangan siber. Tujuannya adalah untuk mencegah akses yang tidak sah, merusak integritas data, dan melindungi privasi pengguna. Keamanan siber mencakup berbagai aspek dan teknik untuk mengidentifikasi, melindungi, mendeteksi, merespon, dan memulihkan dari ancaman siber.</p>
+                    <p class="leading-relaxed mb-8 text-lg">Berikut adalah <a href="#jenis" class="font-bold hover:text-blue-700">jenis-jenis cyber security</a> dan <a href="" class="font-bold hover:text-blue-700">ancaman cyber security</a></p>
                 </div>
 
                 <div class="md:w-1/2">
@@ -16,7 +17,7 @@
         </div>
     </section>
 
-    <section class="bg-[#11001B] text-white">
+    <section id="jenis" class="bg-[#11001B] text-white">
         <div class="container max-w-4xl">
             <div class="text-center py-20">
                 <h1 class="title font-bold text-3xl">Jenis Jenis Cyber Security</h1>
@@ -65,6 +66,7 @@
         </div>
     </section>
 
+    {{-- komentar --}}
     <section id="comment" class="bg-[#11001B] text-white">
         <div class="container max-w-4xl py-10">
             <h4 class="font-semibold border-b pb-3">0 Komentar</h4>
