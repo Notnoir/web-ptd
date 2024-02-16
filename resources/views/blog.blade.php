@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="md:block hidden">
-                    <img src="/img/blog6.png" width="500px" alt="" />
+                    <img class="animate-pulse" src="/img/blog7.png" width="600px" alt="" />
                 </div>
             </div>
         </div>
