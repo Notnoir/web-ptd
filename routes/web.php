@@ -33,5 +33,6 @@ Route::get('/register', function () {
 });
 
 Route::post('/register/post', [UserController::class, 'register'])->name('register.post');
+Route::post('/login/post', [UserController::class, 'login'])->name('login.post');
 Route::get('/comment/create', 'UserController@create')->name('comment.create');
 Route::get('/comment/reply/{id}', '@create')->name('comment.reply');

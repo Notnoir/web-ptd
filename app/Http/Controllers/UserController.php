@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -22,34 +23,31 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('/')->with('status', 'Selamat Datang');
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect('/')->with('status', 'Selamat Datang');
+        }
+
     }
 
+    public function login(Request $request) {
+        $credentials = $request->only('email', 'password');
 
+        if (Auth::attempt($credentials)) {
+            return redirect('/')->with('status', 'Selamat Datang');
+        }
 
-    // public function display($id){
-    //     $user = User::find($id);
-    //     return view('user.index', compact('user'));
-    // }
+        return back()->with('status', 'Email atau Password salah');
+    }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $user = User::find($id);
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-    //     $this->validate($request, [
-    //         'name' => 'required|string|max:255',
-    //         'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-    //         'password' => 'nullable|string|min:8|confirmed',
-    //     ]);
-
-    //     $user->update([
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'password' => Hash::make($request->password),
-    //     ]);
-
-    //     return redirect()->route('users.index')->with('status', 'User berhasil diubah.');
-    // }
-
+        return redirect('/');
+    }
 
 }
