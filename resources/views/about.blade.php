@@ -4,14 +4,14 @@
     <section class="bg-gradient-to-b from-[#000000] to-[#210034] min-h-screen flex items-center justify-center text-white relative">
         <div class="container py-20">
             <div class="flex flex-col items-center z-20 md:flex-row">
-                <div class="text-white mb-12 md:text-left md:w-1/2 md:pr-10">
+                <div class="text-white mb-12 md:text-left md:w-1/2 md:pr-10 animate__animated animate__fadeInLeft animate__slow">
                     <h1 class="title mb-4 font-bold text-4xl">Pengertian Cyber Security</h1>
                     <p class="leading-relaxed mt-8 text-xl">Cyber security atau keamanan Siber adalah praktik untuk melindungi sistem komputer, jaringan, perangkat, dan data dari ancaman dan serangan siber. Tujuannya adalah untuk mencegah akses yang tidak sah, merusak integritas data, dan melindungi privasi pengguna. Keamanan siber mencakup berbagai aspek dan teknik untuk mengidentifikasi, melindungi, mendeteksi, merespon, dan memulihkan dari ancaman siber.</p>
                     <p class="leading-relaxed mb-8 text-lg">Berikut adalah <a href="#jenis" class="font-bold hover:text-blue-700">jenis-jenis cyber security</a> dan <a href="" class="font-bold hover:text-blue-700">ancaman cyber security</a></p>
                 </div>
 
                 <div class="md:w-1/2">
-                    <img src="/img/hero2.png" alt="" />
+                    <img src="/img/hero2.png" class="animate__animated animate__fadeInRight animate__slow" alt="" />
                 </div>
             </div>
         </div>

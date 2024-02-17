@@ -16,8 +16,8 @@
     {{-- jumbotron --}}
     <section class="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
         <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-            <h1 class="mb-4 text-4xl font-bold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Cyber Security Excellence, Your Ultimate Digital Guardian</h1>
-            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Empowering Digital Fortresses. Where Cyber Security Meets Innovation. Defend, Protect, and Secure in the Digital Age.</p>
+            <h1 class="mb-4 text-4xl font-bold tracking-tight leading-none text-white md:text-5xl lg:text-6xl animate__animated animate__fadeInUp">Cyber Security Excellence, Your Ultimate Digital Guardian</h1>
+            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48 animate__animated animate__fadeIn animate__slower">Empowering Digital Fortresses. Where Cyber Security Meets Innovation. Defend, Protect, and Secure in the Digital Age.</p>
             {{-- <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
                 <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                     Get started
@@ -35,7 +35,7 @@
     <section class="bg-gradient-to-b from-[#000000] to-[#210034] min-h-screen flex items-center justify-center text-white relative">
         <div class="container">
             <div class="flex flex-col items-center justify-center z-20 md:flex-row">
-                <div class="text-white md:text-left md:w-1/2 md:pr-10">
+                <div class="text-white md:text-left md:w-1/2 md:pr-10 animate__animated animate__fadeInLeft animate__slow">
                     <h1 class="title mb-4 font-bold text-4xl">Pengertian Cyber Security</h1>
                     <p class="leading-relaxed mb-8 mt-8 text-xl">Cyber security atau keamanan Siber adalah praktik untuk melindungi sistem komputer, jaringan, perangkat, dan data dari ancaman dan serangan siber. Tujuannya adalah untuk mencegah akses yang tidak sah, merusak integritas data, dan melindungi privasi pengguna. Keamanan siber mencakup berbagai aspek dan teknik untuk mengidentifikasi, melindungi, mendeteksi, merespon, dan memulihkan dari ancaman siber.</p>
                 </div>
@@ -51,7 +51,7 @@
     <section class="bg-[#210034] min-h-screen flex items-center justify-center text-white relative">
         <div class="container">
             {{-- card group 1 --}}
-            <div class="flex flex-col gap-8 items-center justify-center z-20 md:flex-row ">
+            <div class="flex flex-col gap-8 items-center justify-center z-20 md:flex-row">
                 <div class="max-w-sm bg-black bg-opacity-40 border border-gray-800 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img class="rounded-t-lg" src="https://www.acerid.com/wp-content/uploads/2021/10/Thumbnail-3.jpg" alt="" />

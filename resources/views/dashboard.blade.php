@@ -5,14 +5,14 @@
         <div class="container py-20 mt-16">
             <div class="flex flex-col items-center justify-center z-20 md:flex-row">
                 <div class="text-white mb-12 md:text-left md:w-1/2 md:pr-10">
-                    <h1 class="title mb-4 font-semibold text-2xl">Cyber Security</h1>
-                    <p class="leading-tight text-7xl mb-3">Your data is your power, and it needs to be protected</p>
-                    <p class="leading-relaxed mb-8 mt-8 text-xl line-clamp-3">Cyber security atau keamanan Siber adalah praktik untuk melindungi sistem komputer, jaringan, perangkat, dan data dari ancaman dan serangan siber. Tujuannya adalah untuk mencegah akses yang tidak sah, merusak integritas data, dan melindungi privasi pengguna. Keamanan siber mencakup berbagai aspek dan teknik untuk mengidentifikasi, melindungi, mendeteksi, merespon, dan memulihkan dari ancaman siber.</p>
-                    <a href="/about" class="bg-white text-black rounded-full py-3 px-10 font-medium text-base hover:opacity-80">Read more >></a>
+                    <h1 class="title mb-4 font-semibold text-2xl animate__animated animate__fadeInLeft animate__slow">Cyber Security</h1>
+                    <p class="leading-tight text-7xl mb-3 animate__animated animate__fadeInLeft animate__slow">Your data is your power, and it needs to be protected</p>
+                    <p class="leading-relaxed mb-8 mt-8 text-xl line-clamp-3 animate__animated animate__fadeInLeft animate__slow">Cyber security atau keamanan Siber adalah praktik untuk melindungi sistem komputer, jaringan, perangkat, dan data dari ancaman dan serangan siber. Tujuannya adalah untuk mencegah akses yang tidak sah, merusak integritas data, dan melindungi privasi pengguna. Keamanan siber mencakup berbagai aspek dan teknik untuk mengidentifikasi, melindungi, mendeteksi, merespon, dan memulihkan dari ancaman siber.</p>
+                    <a href="/about" class="bg-white text-black rounded-full py-3 px-10 font-medium text-base hover:opacity-80 animate__animated animate__fadeInLeft animate__slow">Read more >></a>
                 </div>
     
                 <div class="md:w-1/2">
-                    <img src="/img/login1.png" class="rounded-3xl" width="600px" alt="" />
+                    <img src="/img/hero5.png" class="animate__animated animate__fadeIn animate__slower" width="600px" alt="" />
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
     <section class="bg-[#11001B]">
         <div class="container py-20">
           <div class="text-center text-white m-auto mb-12 md:w-1/2">
-            <a href="/about" class="title font-sans font-semibold text-4xl">Jenis Jenis Cyber Security</a>
+            <a href="/about" class="title font-sans font-semibold text-4xl animate__animated animate__fadeInUp">Jenis Jenis Cyber Security</a>
           </div>
 
             <div class="text-white">
