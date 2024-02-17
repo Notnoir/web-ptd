@@ -26,7 +26,7 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect('/')->with('status', 'Selamat Datang');
+            return redirect('/dashboard')->with('status', 'Selamat Datang');
         }
 
     }
@@ -35,7 +35,7 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect('/')->with('status', 'Selamat Datang');
+            return redirect('/dashboard')->with('status', 'Selamat Datang');
         }
 
         return back()->with('status', 'Email atau Password salah');
@@ -47,7 +47,7 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/dashboard');
     }
 
 }
