@@ -26,7 +26,7 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect('/dashboard')->with('status', 'Selamat Datang');
+            return redirect('/dashboard')->with('toast_success', 'Selamat Datang');
         }
 
     }
@@ -35,10 +35,10 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect('/dashboard')->with('status', 'Selamat Datang');
+            return redirect('/dashboard')->with('toast_success', 'Selamat Datang');
         }
 
-        return back()->with('status', 'Email atau Password salah');
+        return back()->with('toast_error', 'Email atau Password salah');
     }
 
     public function logout(Request $request)
