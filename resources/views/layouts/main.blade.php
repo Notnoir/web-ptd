@@ -64,7 +64,7 @@
                                 <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-100">Dashboard</a>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                                <a href="/profile" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
                             </li>
                         </ul>
                         <div class="py-2">
@@ -132,7 +132,7 @@
                 </ul>
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span class="block text-sm text-white sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
+            <span class="block text-sm text-white sm:text-center dark:text-gray-400">© 2023 <a href="/dashboard" class="hover:underline">CSecurity™</a>. All Rights Reserved.</span>
         </div>
     </footer>
 

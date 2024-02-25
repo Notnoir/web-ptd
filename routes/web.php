@@ -30,6 +30,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 // login register
 Route::get('/login', function () {
     return view('users.login');
