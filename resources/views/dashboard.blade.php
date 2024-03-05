@@ -30,7 +30,7 @@
                     <a href="/about" class="bg-white text-black rounded-full py-3 px-10 font-medium text-base hover:bg-gray-300 animate__animated animate__fadeInLeft animate__slow">Read more >></a>
                 </div>
     
-                <div class="md:w-1/2">
+                <div class="md:block hidden md:w-1/2">
                     <img src="/img/hero5.png" class="animate__animated animate__fadeIn animate__slower" width="600px" alt="" />
                 </div>
             </div>
@@ -38,7 +38,7 @@
     </section>
 
     <section class="bg-[#11001B]">
-        <div class="container py-20 animate__animated animate__fadeIn animate__slow">
+        <div class="container py-28 animate__animated animate__fadeIn animate__slow">
           <div class="text-center text-white m-auto mb-12 md:w-1/2">
             <a href="/about" class="title font-sans font-semibold text-4xl">Jenis Jenis Cyber Security</a>
           </div>

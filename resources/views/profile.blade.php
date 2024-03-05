@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <section>
-        <h1>aisjdiasjdojdoajdso</h1>
+    <section class="bg-gradient-to-b from-[#11001B] to-[#3f007d] min-h-screen flex items-center justify-center">
+        
     </section>
 @endsection
