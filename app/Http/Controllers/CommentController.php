@@ -17,7 +17,7 @@ class CommentController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('users.index')->with('status', 'User berhasil ditambahkan.');
+        return redirect()->route('users.index')->with('status', 'Coment berhasil ditambahkan.');
     }
 
     // public function update(Request $request,$id) {
