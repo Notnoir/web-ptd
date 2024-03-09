@@ -21,7 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 Route::get('/about', function () {
-    $comments = Comment::all();
+    $comments = Comment::orderBy('created_at', 'desc')->get();
     $count = Comment::count();
     return view('about', ['comments' => $comments,'count'=>$count]);
 })->name('about');
