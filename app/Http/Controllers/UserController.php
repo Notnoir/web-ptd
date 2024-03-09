@@ -26,7 +26,7 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect('/dashboard')->with('toast_success', 'Selamat Datang');
+            return redirect('/dashboard')->with('success_alert', 'Selamat Datang 👋');
         }
 
     }
