@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
+use App\Models\Comment;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +16,15 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/dashboard');;
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
 Route::get('/about', function () {
-    return view('about');
-});
+    $comments = Comment::all();
+    $count = Comment::count();
+    return view('about', ['comments' => $comments,'count'=>$count]);
+})->name('about');
 Route::get('/blog', function () {
     return view('blog');
 });
@@ -41,7 +43,7 @@ Route::get('/register', function () {
 Route::post('/register/post', [UserController::class, 'register'])->name('register.post');
 Route::post('/login/post', [UserController::class, 'login'])->name('login.post');
 Route::get('/logout', [UserController::class,'logout'])->name('logout');
-Route::get('/comment/create', 'UserController@create')->name('comment.create');
+Route::post('/comment/create', [CommentController::class,'create'])->name('comment.create');
 Route::get('/comment/reply/{id}', '@create')->name('comment.reply');
 
 //profile

@@ -2,33 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Comment;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Comment;
 
 class CommentController extends Controller
 {
-    public function store(Request $request) {
-        $this->validate($request,[
-            'context'=>'required|custom:komentar tidak dapat di muat'
-        ]);
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
 
+    public function create()
+    {
         Comment::create([
-            'content' => $request->content,
+            'content' => request('message'),
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('users.index')->with('status', 'Coment berhasil ditambahkan.');
+        return redirect()->route('about')->with('status', 'Komentar berhasil ditambahkan.');
     }
 
-    // public function update(Request $request,$id) {
-    //     $data = Comment::find($id);
+    public function reply()
+    {
+        Comment::create([
+            'content' => request('message'),
+            'user_id' => Auth::id(),
+            'reply_to'=> request('reply')
+        ]);
 
-    //     $this->validate($request,[
-    //         'context'=>'required|custom:komentar tidak dapat di muat'
-    //     ]);
-    //     $data->content = $request->content;
-    //     $data->save;
-
-    //     return redirect()->route('users.index')->with('status', 'Komentar berhasil diubah.');
-    // }
+        return redirect()->route('about')->with('status', 'Komentar berhasil ditambahkan.');
+    }
 }
