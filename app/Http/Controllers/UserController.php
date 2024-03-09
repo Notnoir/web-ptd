@@ -51,4 +51,28 @@ class UserController extends Controller
         return redirect('/dashboard');
     }
 
+    public function show()
+    {
+        $user = auth()->user();
+        return view('profile', compact('user'));
+    }
+
+    public function update(Request $request)
+    {
+        /** @var \App\Models\User $user **/
+        $user = auth()->user();
+
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255',
+    ]);
+
+    $user->update([
+        'name' => $request->input('name'),
+        'email' => $request->input('email'),
+    ]);
+
+        return redirect('/profile')->with('success_alert', 'data berhasil diperbarui 😁👍');
+    }
+
 }

@@ -30,10 +30,6 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
-
 // login register
 Route::get('/login', function () {
     return view('users.login');
@@ -47,3 +43,7 @@ Route::post('/login/post', [UserController::class, 'login'])->name('login.post')
 Route::get('/logout', [UserController::class,'logout'])->name('logout');
 Route::get('/comment/create', 'UserController@create')->name('comment.create');
 Route::get('/comment/reply/{id}', '@create')->name('comment.reply');
+
+//profile
+Route::get('/profile', [UserController::class, 'show'])->name('profile.show');
+Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
