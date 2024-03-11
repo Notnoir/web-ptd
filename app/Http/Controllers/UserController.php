@@ -78,14 +78,22 @@ class UserController extends Controller
         'email' => $request->input('email'),
     ];
 
+    $defaultPhotos = ['a.jpeg', 'b.jpeg', 'c.jpeg', 'd.jpeg'];
+
+    if ($request->hasFile('photo') && $user->photo && !in_array($user->photo, $defaultPhotos)) {
+        unlink(public_path('profile-photos/' . $user->photo));
+        $data['photo'] = null;
+    }
+
     if ($request->hasFile('photo')) {
-        $request->file('photo')->move('profile-photos/', $request->file('photo')->getClientOriginalName());
-        $data['photo'] = $request->file('photo')->getClientOriginalName();
+        $photoName = uniqid() . '_' . $request->file('photo')->getClientOriginalName();
+        $request->file('photo')->move('profile-photos/', $photoName);
+        $data['photo'] = $photoName;
     }
 
     $user->update($data);
 
-        return redirect('/profile')->with('success_alert', 'data berhasil diperbarui 😁👍');
+        return redirect('/profile')->with('success_alert', 'data berhasil diperbarui');
     }
 
 }
