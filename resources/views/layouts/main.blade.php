@@ -47,7 +47,7 @@
 
                 <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-medium text-white rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:me-0 dark:text-white" type="button">
                     <span class="sr-only ga">Open user menu</span>
-                        <img class="w-8 h-8 me-2 rounded-full" src="{{auth()->user()->photo}}" alt="user photo">
+                        <img class="w-8 h-8 me-2 rounded-full" src="{{ asset('profile-photos/' . auth()->user()->photo) }}" alt="user photo">
                         <span>{{auth()->user()->name}}</span>
                         <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>

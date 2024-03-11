@@ -134,7 +134,7 @@
                 @foreach ($comments as $item)
                     <article class="my-9 text-white" data-comment-id="{{ $item->id }}">
                         <div class="flex items-center mb-4">
-                            <img class="w-8 h-8 me-4 rounded-full" src="{{$item->user->photo}}" alt="">
+                            <img class="w-8 h-8 me-4 rounded-full" src="{{ asset('profile-photos/' . $item->user->photo) }}" alt="">
                             <div class="flex row font-medium text-sm">
                                 <p>{{$item->user->name}}</p>
                                 <span class="mx-3 font-normal text-gray-300">{{ $item->created_at->format('H:i, d F Y') }}</span>

@@ -19,7 +19,7 @@ class UserController extends Controller
 
         $letters = array('a', 'b', 'c', 'd');
         $randomIndex = array_rand($letters);
-        $photo = "/img"."/".$letters[$randomIndex].".jpeg";
+        $photo = $letters[$randomIndex].".jpeg";
 
         User::create([
             'name' => $request->username,
@@ -70,12 +70,20 @@ class UserController extends Controller
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255',
+        'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
-    $user->update([
+    $data = [
         'name' => $request->input('name'),
         'email' => $request->input('email'),
-    ]);
+    ];
+
+    if ($request->hasFile('photo')) {
+        $request->file('photo')->move('profile-photos/', $request->file('photo')->getClientOriginalName());
+        $data['photo'] = $request->file('photo')->getClientOriginalName();
+    }
+
+    $user->update($data);
 
         return redirect('/profile')->with('success_alert', 'data berhasil diperbarui 😁👍');
     }

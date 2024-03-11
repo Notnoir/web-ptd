@@ -58,4 +58,4 @@ Route::delete('/blog/comment/{comment}', [CommentController::class,'blog_destroy
 
 //profile
 Route::get('/profile', [UserController::class, 'show'])->name('profile.show');
-Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+Route::patch('/profile/update', [UserController::class, 'update'])->name('profile.update');
