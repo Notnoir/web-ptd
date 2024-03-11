@@ -17,8 +17,13 @@ class UserController extends Controller
             'password' => 'required|string|min:8',
         ]);
 
+        $letters = array('a', 'b', 'c', 'd');
+        $randomIndex = array_rand($letters);
+        $photo = "/img"."/".$letters[$randomIndex].".jpeg";
+
         User::create([
             'name' => $request->username,
+            'photo' => $photo,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
