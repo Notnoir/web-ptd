@@ -43,8 +43,11 @@ Route::get('/register', function () {
 Route::post('/register/post', [UserController::class, 'register'])->name('register.post');
 Route::post('/login/post', [UserController::class, 'login'])->name('login.post');
 Route::get('/logout', [UserController::class,'logout'])->name('logout');
+
+//comment
 Route::post('/comment/create', [CommentController::class,'create'])->name('comment.create');
 Route::get('/comment/reply/{id}', '@create')->name('comment.reply');
+Route::delete('/comment/{comment}', [CommentController::class,'destroy'])->name('comment.destroy');
 
 //profile
 Route::get('/profile', [UserController::class, 'show'])->name('profile.show');

@@ -19,7 +19,7 @@ class CommentController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('about')->with('status', 'Komentar berhasil ditambahkan.');
+        return redirect()->route('about')->with('success_alert', 'Komentar berhasil ditambahkan');
     }
 
     public function reply()
@@ -31,5 +31,12 @@ class CommentController extends Controller
         ]);
 
         return redirect()->route('about')->with('status', 'Komentar berhasil ditambahkan.');
+    }
+
+    public function destroy(Comment $comment)
+    {
+        $comment->delete();
+
+        return back()->with('delete_alert', 'Komentar berhasil dihapus');
     }
 }
