@@ -57,46 +57,46 @@
     <section id="jenis" class="bg-[#11001B] text-white">
         <div class="container max-w-4xl">
             <div class="text-center py-20">
-                <h1 class="title font-bold text-3xl">Jenis Jenis Cyber Security</h1>
+                <h1 class="animate__animated animate__fadeInDown animate__slow title font-bold text-3xl">Jenis Jenis Cyber Security</h1>
             </div>
 
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">1. Keamanan Jaringan (Network Security)</h1>
                 <p>Fokus pada perlindungan integritas, kerahasiaan, dan ketersediaan data yang bergerak melalui jaringan. Ini melibatkan teknologi seperti firewall, IDS (Intrusion Detection System), IPS (Intrusion Prevention System), dan VPN (Virtual Private Network).</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">2. Keamanan Perimeter (Perimeter Security)</h1>
                 <p>Melibatkan perlindungan terhadap akses yang tidak sah ke dalam jaringan atau sistem dari luar. Ini termasuk penggunaan firewall, gateway keamanan, dan kontrol akses yang ketat.</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">3. Keamanan End-Point (Endpoint Security)</h1>
                 <p>Menyasar perlindungan pada perangkat individu seperti komputer pribadi, laptop, ponsel, dan perangkat IoT. Ini melibatkan penggunaan antivirus, antispyware, firewall pribadi, dan sistem deteksi ancaman end-point.</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">4. Keamanan Aplikasi (Application Security)</h1>
                 <p>Memastikan bahwa perangkat lunak dan aplikasi yang digunakan oleh organisasi aman dari ancaman. Ini melibatkan pengujian keamanan perangkat lunak, pembaruan reguler, dan penerapan best practice dalam pengembangan perangkat lunak.</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">5. Keamanan Data (Data Security)</h1>
                 <p>Melibatkan perlindungan terhadap data dari akses yang tidak sah atau kebocoran. Ini termasuk enkripsi data, manajemen hak akses, dan kebijakan retensi data.</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">6. Keamanan Cloud (Cloud Security)</h1>
                 <p>Fokus pada melindungi data, aplikasi, dan infrastruktur yang disimpan di lingkungan cloud. Ini melibatkan enkripsi cloud, kontrol akses, dan pemantauan aktivitas cloud.</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">7. Keamanan Mobile (Mobile Security)</h1>
                 <p>Mengamankan perangkat mobile dan aplikasi di lingkungan bisnis. Ini melibatkan kebijakan keamanan mobile, enkripsi perangkat mobile, dan pengelolaan perangkat.</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">8. Keamanan Identitas dan Akses (Identity and Access Management - IAM)</h1>
                 <p>Mengelola dan melindungi identitas pengguna dan memberikan hak akses yang sesuai. Ini termasuk autentikasi dua faktor, single sign-on, dan kontrol akses berbasis peran.</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">9. Keamanan Manajemen Jaringan (Network Management Security)</h1>
                 <p>Melibatkan perlindungan terhadap sistem manajemen jaringan dari ancaman yang dapat mempengaruhi fungsionalitas jaringan. Ini mencakup keamanan protokol manajemen dan monitoring jaringan.</p>
             </div>
-            <div class="pb-10">
+            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
                 <h1 class="font-semibold text-xl mb-3">10. Keamanan Fisik (Physical Security)</h1>
                 <p>Menjamin keamanan fisik perangkat keras, pusat data, dan infrastruktur komputer. Ini melibatkan kontrol akses fisik, pemantauan keamanan fisik, dan perlindungan terhadap pencurian atau kerusakan fisik.</p>
             </div>
@@ -141,40 +141,70 @@
                             </div>
                         </div>
                         <p class="mb-2 dark:text-gray-400">{{$item->content}}</p>
-                        @if (auth()->user() && auth()->user()->id == $item->user_id)
-                            <form action="{{ route('comment.destroy', $item->id) }}" method="POST" class="inline">
-                                @csrf
-                                @method('DELETE')
-
-                                {{-- delete modal --}}
-                                <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block text-sm text-red-500 hover:underline" type="button">
-                                    Hapus
+                        <div class="flex flex-col">
+                            <div class="flex items-start justify-start gap-3">
+                                {{-- Tombol atau link "Balas" --}}
+                                <button class="text-sm text-blue-500 hover:underline" onclick="toggleReplyForm({{ $item->id }})">
+                                    Balas
                                 </button>
+                                {{-- Tombol untuk hapus komen --}}
+                                @if (auth()->user() && auth()->user()->id == $item->user_id)
+                                    <form action="{{ route('comment.destroy', $item->id) }}" method="POST" class="inline">
+                                        @csrf
+                                        @method('DELETE')
 
-                                <div id="popup-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                    <div class="relative p-4 w-full max-w-md max-h-full">
-                                        <div class="relative bg-white rounded-lg shadow">
-                                            <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="popup-modal">
-                                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                                </svg>
-                                                <span class="sr-only">Close modal</span>
-                                            </button>
-                                            <div class="p-4 md:p-5 text-center">
-                                                <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                                                </svg>
-                                                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Kamu yakin ingin menghapus komentar ini?</h3>
-                                                <button data-modal-hide="popup-modal" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
-                                                    Ya, Hapus
-                                                </button>
-                                                <button data-modal-hide="popup-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Tidak</button>
+                                        {{-- delete modal --}}
+                                        <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block text-sm text-red-500 hover:underline" type="button">
+                                            Hapus
+                                        </button>
+
+                                        <div id="popup-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                            <div class="relative p-4 w-full max-w-md max-h-full">
+                                                <div class="relative bg-white rounded-lg shadow">
+                                                    <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="popup-modal">
+                                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                        </svg>
+                                                        <span class="sr-only">Close modal</span>
+                                                    </button>
+                                                    <div class="p-4 md:p-5 text-center">
+                                                        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                                                        </svg>
+                                                        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Kamu yakin ingin menghapus komentar ini?</h3>
+                                                        <button data-modal-hide="popup-modal" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+                                                            Ya, Hapus
+                                                        </button>
+                                                        <button data-modal-hide="popup-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Tidak</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                    </form>
+                                @endif 
+                            </div>
+                            <div class="">
+                                {{-- Form untuk balasan --}}
+                                <form id="reply-form-{{ $item->id }}" action="" method="" class="hidden mt-3">
+                                    @csrf
+                                    <textarea name="reply_content" class="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Tulis balasan Anda..."></textarea>
+                                    <button type="submit" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Kirim</button>
+                                </form>
+                            </div>
+                        </div>
+                        {{-- Daftar balasan --}}
+                        <div id="replies-container" class="mt-3">
+                            <div class="ml-8">
+                                <div class="flex items-center mb-4">
+                                    <img class="w-8 h-8 me-4 rounded-full" src="/profile-photos/a.jpeg" alt="">
+                                    <div class="flex row font-medium text-sm">
+                                        <p>Hansen</p>
+                                        <span class="mx-3 font-normal text-gray-300">14 March 2024</span>
                                     </div>
                                 </div>
-                            </form>
-                        @endif
+                                <p class="mb-2 dark:text-gray-400">oakoakwowkaokww</p>
+                            </div>
+                        </div>
                     </article>
                 @endforeach
             </div>
@@ -190,5 +220,15 @@
                 toastSuccess.style.display = 'none';
             }, 1000);
         }, 2000);
+
+        // balas komentar
+        function toggleReplyForm(commentId) {
+            var form = document.getElementById('reply-form-' + commentId);
+            if (form.classList.contains('hidden')) {
+                form.classList.remove('hidden');
+            } else {
+                form.classList.add('hidden');
+            }
+        }
     </script>
 @endsection
