@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Comment;
+use App\Models\ReplyComments;
 use App\Models\BlogComment;
+use App\Models\ReplyBlogComment;
 
 class CommentController extends Controller
 {
@@ -25,13 +27,13 @@ class CommentController extends Controller
 
     public function reply()
     {
-        Comment::create([
-            'content' => request('message'),
+        ReplyComments::create([
+            'content' => request('reply_content'),
             'user_id' => Auth::id(),
             'reply_to'=> request('reply')
         ]);
 
-        return redirect()->route('about')->with('status', 'Komentar berhasil ditambahkan.');
+        return redirect()->route('about')->with('success_alert', 'Balasan berhasil ditambahkan.');
     }
 
     public function destroy(Comment $comment)
@@ -53,13 +55,13 @@ class CommentController extends Controller
 
     public function blog_reply()
     {
-        BlogComment::create([
-            'content' => request('message'),
+        ReplyBlogComments::create([
+            'content' => request('reply_content'),
             'user_id' => Auth::id(),
             'reply_to'=> request('reply')
         ]);
 
-        return redirect()->route('blog')->with('status', 'Komentar berhasil ditambahkan.');
+        return redirect()->route('blog')->with('status', 'Balasan berhasil ditambahkan.');
     }
 
     public function blog_destroy(BlogComment $comment)

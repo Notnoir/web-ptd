@@ -4,10 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\ReplyComments;
-
-class Comment extends Model
+use App\Models\Comment;
+class ReplyComments extends Model
 {
     use HasFactory;
 
@@ -17,13 +15,8 @@ class Comment extends Model
         'user_id'
     ];
 
-    public function user()
+    public function comment()
     {
-        return $this->belongsTo(User::class);
-    }
-
-    public function reply()
-    {
-        return $this->hasMany(ReplyComments::class);
+        return $this->belongsTo(Comment::class);
     }
 }

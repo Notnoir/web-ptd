@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
 use App\Models\Comment;
+use App\Models\ReplyComments;
 use App\Models\BlogComment;
+use App\Models\ReplyBlogComment;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +26,13 @@ Route::get('/dashboard', function () {
 Route::get('/about', function () {
     $comments = Comment::orderBy('created_at', 'desc')->get();
     $count = Comment::count();
-    return view('about', ['comments' => $comments,'count'=>$count]);
+    $reply = ReplyComments::where('reply_to', $comments['0'])->get();
+    return view('about', ['comments' => $comments,'count'=>$count,'reply'=>$reply]);
 })->name('about');
 Route::get('/blog', function () {
     $comments = BlogComment::orderBy('created_at', 'desc')->get();
     $count = BlogComment::count();
+    $reply = ReplyBlogComment::where('reply_to', $comments['0'])->get();
     return view('blog', ['comments' => $comments,'count'=>$count]);
 })->name('blog');
 Route::get('/contact', function () {
@@ -48,13 +52,14 @@ Route::post('/login/post', [UserController::class, 'login'])->name('login.post')
 Route::get('/logout', [UserController::class,'logout'])->name('logout');
 
 //comment about
-Route::post('/comment/create', [CommentController::class,'create'])->name('comment.create');
-Route::get('/comment/reply/{id}', '@create')->name('comment.reply');
-Route::delete('/comment/{comment}', [CommentController::class,'destroy'])->name('comment.destroy');
+Route::post('/about/comment/create', [CommentController::class,'create'])->name('comment.create');
+Route::post('/about/comment/reply', [CommentController::class,'reply'])->name('comment.reply');
+Route::delete('/about/comment/{comment}', [CommentController::class,'destroy'])->name('comment.destroy');
+
 
 //comment blog
 Route::post('/blog/comment/create', [CommentController::class,'blog_create'])->name('blog.comment.create');
-Route::get('/blog/comment/reply/{id}', '@create')->name('blog.comment.reply');
+Route::post('/blog/comment/reply', '@create')->name('blog.comment.reply');
 Route::delete('/blog/comment/{comment}', [CommentController::class,'blog_destroy'])->name('blog.comment.destroy');
 
 //profile

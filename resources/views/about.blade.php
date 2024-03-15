@@ -181,30 +181,33 @@
                                             </div>
                                         </div>
                                     </form>
-                                @endif 
+                                @endif
                             </div>
                             <div class="">
                                 {{-- Form untuk balasan --}}
-                                <form id="reply-form-{{ $item->id }}" action="" method="" class="hidden mt-3">
+                                <form id="reply-form-{{ $item->id }}" action="{{route('comment.reply')}}" method="POST" class="hidden mt-3">
                                     @csrf
+                                    <input type="hidden" name="reply" value="{{$item->id}}">
                                     <textarea name="reply_content" class="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Tulis balasan Anda..."></textarea>
                                     <button type="submit" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Kirim</button>
                                 </form>
                             </div>
                         </div>
                         {{-- Daftar balasan --}}
-                        <div id="replies-container" class="mt-3">
-                            <div class="ml-8">
-                                <div class="flex items-center mb-4">
-                                    <img class="w-8 h-8 me-4 rounded-full" src="/profile-photos/a.jpeg" alt="">
-                                    <div class="flex row font-medium text-sm">
-                                        <p>Hansen</p>
-                                        <span class="mx-3 font-normal text-gray-300">14 March 2024</span>
+                        @foreach ( $reply as $rep)
+                            <div id="replies-container" class="mt-3">
+                                <div class="ml-8">
+                                    <div class="flex items-center mb-4">
+                                        <img class="w-8 h-8 me-4 rounded-full" src="/profile-photos/a.jpeg" alt="">
+                                        <div class="flex row font-medium text-sm">
+                                            <p>{{$item->user->name}}</p>
+                                            <span class="mx-3 font-normal text-gray-300">14 March 2024</span>
+                                        </div>
                                     </div>
+                                    <p class="mb-2 dark:text-gray-400">oakoakwowkaokww</p>
                                 </div>
-                                <p class="mb-2 dark:text-gray-400">oakoakwowkaokww</p>
                             </div>
-                        </div>
+                        @endforeach
                     </article>
                 @endforeach
             </div>
