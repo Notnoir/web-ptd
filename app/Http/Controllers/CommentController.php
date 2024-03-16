@@ -55,13 +55,13 @@ class CommentController extends Controller
 
     public function blog_reply()
     {
-        ReplyBlogComments::create([
+        ReplyBlogComment::create([
             'content' => request('reply_content'),
             'user_id' => Auth::id(),
             'reply_to'=> request('reply')
         ]);
 
-        return redirect()->route('blog')->with('status', 'Balasan berhasil ditambahkan.');
+        return redirect()->route('blog')->with('success_alert', 'Balasan berhasil ditambahkan.');
     }
 
     public function blog_destroy(BlogComment $comment)

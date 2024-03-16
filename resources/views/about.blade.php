@@ -144,9 +144,13 @@
                         <div class="flex flex-col">
                             <div class="flex items-start justify-start gap-3">
                                 {{-- Tombol atau link "Balas" --}}
-                                <button class="text-sm text-blue-500 hover:underline" onclick="toggleReplyForm({{ $item->id }})">
-                                    Balas
-                                </button>
+                                @if (Auth::check())
+                                    <button class="text-sm text-blue-500 hover:underline" onclick="toggleReplyForm({{ $item->id }})">
+                                        Balas
+                                    </button>
+                                @else
+                                    <a href="/login" class="text-sm text-blue-500 hover:underline">Balas</a>
+                                @endif
                                 {{-- Tombol untuk hapus komen --}}
                                 @if (auth()->user() && auth()->user()->id == $item->user_id)
                                     <form action="{{ route('comment.destroy', $item->id) }}" method="POST" class="inline">
@@ -189,25 +193,31 @@
                                     @csrf
                                     <input type="hidden" name="reply" value="{{$item->id}}">
                                     <textarea name="reply_content" class="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Tulis balasan Anda..."></textarea>
-                                    <button type="submit" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Kirim</button>
+                                    <button type="submit" id="submit-comment" class="inline-flex items-center my-2 py-2.5 px-7 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                                        Kirim
+                                    </button>
                                 </form>
                             </div>
                         </div>
                         {{-- Daftar balasan --}}
-                        @foreach ( $reply as $rep)
-                            <div id="replies-container" class="mt-3">
-                                <div class="ml-8">
-                                    <div class="flex items-center mb-4">
-                                        <img class="w-8 h-8 me-4 rounded-full" src="/profile-photos/a.jpeg" alt="">
-                                        <div class="flex row font-medium text-sm">
-                                            <p>{{$item->user->name}}</p>
-                                            <span class="mx-3 font-normal text-gray-300">14 March 2024</span>
+                            @foreach($replies->where('reply_to', $item->id) as $reply)
+                                <div id="replies-container" class="mt-3">
+                                    <div class="ml-8">
+                                        <div class="flex items-center mb-4">
+                                            @if($reply->user && $reply->user->photo)
+                                                <img class="w-8 h-8 me-4 rounded-full" src="{{ asset('profile-photos/' . $reply->user->photo) }}" alt="User Photo">
+                                            @else
+                                                <img class="w-8 h-8 me-4 rounded-full" src="{{ asset('profile-photos/default.jpg') }}" alt="Default Photo">
+                                            @endif
+                                            <div class="flex row font-medium text-sm">
+                                                    <p>{{ optional($reply->user)->name ?? 'Anonymous' }}</p>
+                                                <span class="mx-3 font-normal text-gray-300">{{ $reply->created_at->format('H:i, d F Y') }}</span>
+                                            </div>
                                         </div>
+                                        <p class="mb-2 dark:text-gray-400">{{ $reply->content }}</p>
                                     </div>
-                                    <p class="mb-2 dark:text-gray-400">oakoakwowkaokww</p>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
                     </article>
                 @endforeach
             </div>

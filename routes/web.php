@@ -24,16 +24,16 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 Route::get('/about', function () {
-    $comments = Comment::orderBy('created_at', 'desc')->get();
+    $comments = Comment::with('user')->orderBy('created_at', 'desc')->get();
     $count = Comment::count();
-    $reply = ReplyComments::where('reply_to', $comments['0'])->get();
-    return view('about', ['comments' => $comments,'count'=>$count,'reply'=>$reply]);
+    $replies = ReplyComments::all();
+    return view('about', ['comments' => $comments,'count'=>$count, 'replies' => $replies]);
 })->name('about');
 Route::get('/blog', function () {
     $comments = BlogComment::orderBy('created_at', 'desc')->get();
     $count = BlogComment::count();
-    $reply = ReplyBlogComment::where('reply_to', $comments['0'])->get();
-    return view('blog', ['comments' => $comments,'count'=>$count]);
+    $replies = ReplyBlogComment::all();
+    return view('blog', ['comments' => $comments,'count'=>$count, 'replies' => $replies]);
 })->name('blog');
 Route::get('/contact', function () {
     return view('contact');
@@ -59,7 +59,7 @@ Route::delete('/about/comment/{comment}', [CommentController::class,'destroy'])-
 
 //comment blog
 Route::post('/blog/comment/create', [CommentController::class,'blog_create'])->name('blog.comment.create');
-Route::post('/blog/comment/reply', '@create')->name('blog.comment.reply');
+Route::post('/blog/comment/reply', [CommentController::class,'blog_reply'])->name('blog.comment.reply');
 Route::delete('/blog/comment/{comment}', [CommentController::class,'blog_destroy'])->name('blog.comment.destroy');
 
 //profile

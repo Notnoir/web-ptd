@@ -78,7 +78,7 @@ class UserController extends Controller
         'email' => $request->input('email'),
     ];
 
-    $defaultPhotos = ['a.jpeg', 'b.jpeg', 'c.jpeg', 'd.jpeg'];
+    $defaultPhotos = ['a.jpeg', 'b.jpeg', 'c.jpeg', 'd.jpeg', 'default.jpg'];
 
     if ($request->hasFile('photo') && $user->photo && !in_array($user->photo, $defaultPhotos)) {
         unlink(public_path('profile-photos/' . $user->photo));
