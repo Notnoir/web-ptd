@@ -61,8 +61,13 @@
                             @method('PATCH')
                             @csrf
                             <div class="flex flex-col">
-                                <span class="text-white">Profile Picture</span>
-                                <input type="file" name="photo" accept="image/*" class="mt-3">
+                                <div id="imagePreview" class="my-3">
+                                    <img class="rounded-full w-36 h-36" id="previewImage" src="{{ asset('profile-photos/' . auth()->user()->photo) }}" alt="Default Image">
+                                </div>
+                                <div class="flex">
+                                    <input type="file" name="photo" id="fileInput" accept="image/*" class="mt-3">
+                                    <button type="reset" class="inline-flex items-center my-2 py-2.5 px-7 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800" id="resetButton">Reset Photo</button>
+                                </div>
                                 <span class="text-white mt-5">Nama</span>
                                 <input type="text" name="name" class="text-white bg-transparent max-w-xl border rounded-lg mt-3" value="{{ $user->name }}">
                                 <span class="text-white mt-5">Email</span>
@@ -89,5 +94,26 @@
                 toastSuccess.style.display = 'none';
             }, 1000);
         }, 2000);
+
+        //chosee change photo
+        const fileInput = document.getElementById('fileInput');
+        const previewImage = document.getElementById('previewImage');
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        //reset photo
+        document.getElementById('resetButton').addEventListener('click', function() {
+            const defaultPhoto = "{{ asset('profile-photos/' . auth()->user()->photo) }}";
+            document.getElementById('previewImage').src = defaultPhoto;
+        });
     </script>
 @endsection

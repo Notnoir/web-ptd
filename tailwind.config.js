@@ -6,7 +6,13 @@ module.exports = {
         "./node_modules/flowbite/**/*.js",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ["Poppins", "sans-serif"],
+                ojuju: ["Ojuju", "sans-serif"],
+                roboto: ["Roboto", "sans-serif"],
+            },
+        },
         container: {
             center: true,
             padding: {

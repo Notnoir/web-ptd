@@ -8,9 +8,13 @@
   {{-- awesomefont --}}
   <link rel="stylesheet" href="{{ asset('fontawesome-free-6.5.1-web/css/all.min.css') }}">
 
+  {{-- google font --}}
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
 
 </head>
-<body>
+<body class="font-roboto">
   <section class="bg-gradient-to-b from-[#11001B] to-[#3f007d] min-h-screen flex items-center justify-center">
 
     <div class="bg-gradient-to-r from-[#11001B] to-[#470b83] flex rounded-2xl shadow-lg max-w-3xl">
@@ -27,7 +31,7 @@
                 <span class="text-white font-semibold">Password</span>
                 <div class="flex flex-row bg-transparent rounded-lg border -mt-3">
                   <input class="bg-transparent rounded-lg border-none outline-none focus:outline-none" id="password" type="password" name="password" placeholder="Password">
-                  <i class="fa-solid fa-eye-slash my-auto mx-auto" id="pass-icon" onclick="pass()"></i>
+                  <i class="fa-solid fa-eye-slash my-auto mx-auto cursor-pointer" id="pass-icon" onclick="togglePassword()"></i>
                 </div>
                 <button class="bg-white text-black rounded-lg py-2 mt-5 hover:opacity-80 font-semibold" type="submit">Daftar</button>
             </form>
@@ -46,20 +50,20 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   <script>
-    var a;
-    function pass()
-    {
-      if(a==1)
-      {
-        document.getElementById('password').type='password';
-        a=0;
-      }
-      else
-      {
-        document.getElementById('password').type='text';
-        a=1;
-      }
+    function togglePassword() {
+    var passwordInput = document.getElementById("password");
+    var passIcon = document.getElementById("pass-icon");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      passIcon.classList.remove("fa-eye-slash");
+      passIcon.classList.add("fa-eye");
+    } else {
+      passwordInput.type = "password";
+      passIcon.classList.remove("fa-eye");
+      passIcon.classList.add("fa-eye-slash");
     }
+  }
   </script>
 </body>
 </html>

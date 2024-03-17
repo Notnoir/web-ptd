@@ -60,43 +60,43 @@
                 <h1 class="animate__animated animate__fadeInDown animate__slow title font-bold text-3xl">Jenis Jenis Cyber Security</h1>
             </div>
 
-            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">1. Keamanan Jaringan (Network Security)</h1>
                 <p>Fokus pada perlindungan integritas, kerahasiaan, dan ketersediaan data yang bergerak melalui jaringan. Ini melibatkan teknologi seperti firewall, IDS (Intrusion Detection System), IPS (Intrusion Prevention System), dan VPN (Virtual Private Network).</p>
             </div>
-            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">2. Keamanan Perimeter (Perimeter Security)</h1>
                 <p>Melibatkan perlindungan terhadap akses yang tidak sah ke dalam jaringan atau sistem dari luar. Ini termasuk penggunaan firewall, gateway keamanan, dan kontrol akses yang ketat.</p>
             </div>
-            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">3. Keamanan End-Point (Endpoint Security)</h1>
                 <p>Menyasar perlindungan pada perangkat individu seperti komputer pribadi, laptop, ponsel, dan perangkat IoT. Ini melibatkan penggunaan antivirus, antispyware, firewall pribadi, dan sistem deteksi ancaman end-point.</p>
             </div>
-            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">4. Keamanan Aplikasi (Application Security)</h1>
                 <p>Memastikan bahwa perangkat lunak dan aplikasi yang digunakan oleh organisasi aman dari ancaman. Ini melibatkan pengujian keamanan perangkat lunak, pembaruan reguler, dan penerapan best practice dalam pengembangan perangkat lunak.</p>
             </div>
-            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">5. Keamanan Data (Data Security)</h1>
                 <p>Melibatkan perlindungan terhadap data dari akses yang tidak sah atau kebocoran. Ini termasuk enkripsi data, manajemen hak akses, dan kebijakan retensi data.</p>
             </div>
-            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">6. Keamanan Cloud (Cloud Security)</h1>
                 <p>Fokus pada melindungi data, aplikasi, dan infrastruktur yang disimpan di lingkungan cloud. Ini melibatkan enkripsi cloud, kontrol akses, dan pemantauan aktivitas cloud.</p>
             </div>
-            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">7. Keamanan Mobile (Mobile Security)</h1>
                 <p>Mengamankan perangkat mobile dan aplikasi di lingkungan bisnis. Ini melibatkan kebijakan keamanan mobile, enkripsi perangkat mobile, dan pengelolaan perangkat.</p>
             </div>
-            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">8. Keamanan Identitas dan Akses (Identity and Access Management - IAM)</h1>
                 <p>Mengelola dan melindungi identitas pengguna dan memberikan hak akses yang sesuai. Ini termasuk autentikasi dua faktor, single sign-on, dan kontrol akses berbasis peran.</p>
             </div>
-            <div class="animate__animated animate__fadeInLeft animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">9. Keamanan Manajemen Jaringan (Network Management Security)</h1>
                 <p>Melibatkan perlindungan terhadap sistem manajemen jaringan dari ancaman yang dapat mempengaruhi fungsionalitas jaringan. Ini mencakup keamanan protokol manajemen dan monitoring jaringan.</p>
             </div>
-            <div class="animate__animated animate__fadeInRight animate__slow pb-10">
+            <div class="scroll-animated pb-10">
                 <h1 class="font-semibold text-xl mb-3">10. Keamanan Fisik (Physical Security)</h1>
                 <p>Menjamin keamanan fisik perangkat keras, pusat data, dan infrastruktur komputer. Ini melibatkan kontrol akses fisik, pemantauan keamanan fisik, dan perlindungan terhadap pencurian atau kerusakan fisik.</p>
             </div>
@@ -134,9 +134,13 @@
                 @foreach ($comments as $item)
                     <article class="my-9 text-white" data-comment-id="{{ $item->id }}">
                         <div class="flex items-center mb-4">
-                            <img class="w-8 h-8 me-4 rounded-full" src="{{ asset('profile-photos/' . $item->user->photo) }}" alt="">
+                            @if($item->user && $item->user->photo)
+                                <img class="w-8 h-8 me-4 rounded-full" src="{{ asset('profile-photos/' . $item->user->photo) }}" alt="User Photo">
+                            @else
+                                <img class="w-8 h-8 me-4 rounded-full" src="{{ asset('profile-photos/default.jpg') }}" alt="Default Photo">
+                            @endif
                             <div class="flex row font-medium text-sm">
-                                <p>{{$item->user->name}}</p>
+                                <p>{{ optional($item->user)->name ?? 'Anonymous' }}</p>
                                 <span class="mx-3 font-normal text-gray-300">{{ $item->created_at->format('H:i, d F Y') }}</span>
                             </div>
                         </div>
@@ -243,5 +247,22 @@
                 form.classList.add('hidden');
             }
         }
+
+        // scroll animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.scroll-animated');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated', 'animate__fadeIn', 'animate__slower');
+                    }
+                });
+            });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
     </script>
 @endsection

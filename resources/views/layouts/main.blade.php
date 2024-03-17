@@ -9,6 +9,11 @@
   {{-- awesomefont --}}
   <link rel="stylesheet" href="{{ asset('fontawesome-free-6.5.1-web/css/all.min.css') }}">
 
+  {{-- google font --}}
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
   {{-- owl carousel --}}
   <link
     rel="stylesheet"
@@ -32,7 +37,7 @@
     />
 
 </head>
-<body>
+<body class="font-roboto">
     <header>
         {{-- navbar --}}
         <nav class="bg-[#11001B] dark:bg-gray-900 fixed w-full z-20 top-0 start-00 dark:border-gray-600 bg-opacity-80 backdrop-blur-sm">
@@ -103,7 +108,7 @@
         </nav>
     </header>
 
-    <main class="">
+    <main class="font-sans">
         <div class="mt-auto">
             @yield('content')
         </div>
@@ -158,7 +163,7 @@
                     items:3
                 },
                 1000:{
-                    items:5
+                    items:2
                 }
             }
         })
