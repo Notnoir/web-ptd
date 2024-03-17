@@ -43,14 +43,22 @@
             <div class="flex flex-col items-center z-20 md:flex-row">
                 <div class="text-white mb-12 md:text-left md:w-1/2 md:pr-10 animate__animated animate__fadeInLeft animate__slow">
                     <h1 class="title mb-4 font-bold text-4xl">Pengertian Cyber Security</h1>
-                    <p class="leading-relaxed mt-8 text-xl">Cyber security atau keamanan Siber adalah praktik untuk melindungi sistem komputer, jaringan, perangkat, dan data dari ancaman dan serangan siber. Tujuannya adalah untuk mencegah akses yang tidak sah, merusak integritas data, dan melindungi privasi pengguna. Keamanan siber mencakup berbagai aspek dan teknik untuk mengidentifikasi, melindungi, mendeteksi, merespon, dan memulihkan dari ancaman siber.</p>
-                    <p class="leading-relaxed mb-8 text-lg">Berikut adalah <a href="#jenis" class="font-bold hover:text-blue-700">jenis-jenis cyber security</a></p>
+                    <p class="leading-relaxed mt-8 text-lg font-thin">Cyber security atau keamanan Siber adalah praktik untuk melindungi sistem komputer, jaringan, perangkat, dan data dari ancaman dan serangan siber. Tujuannya adalah untuk mencegah akses yang tidak sah, merusak integritas data, dan melindungi privasi pengguna. Keamanan siber mencakup berbagai aspek dan teknik untuk mengidentifikasi, melindungi, mendeteksi, merespon, dan memulihkan dari ancaman siber.</p>
+                    <p class="leading-relaxed mb-8 text-lg">Berikut adalah <a href="#jenis" class="font-bold hover:text-blue-700 scroll-link">jenis-jenis cyber security</a></p>
                 </div>
 
                 <div class="md:w-1/2">
                     <img src="/img/hero2.png" class="animate__animated animate__fadeInRight animate__slow md:block hidden" alt="" />
                 </div>
             </div>
+            <div class="flex justify-center">
+                <a href="#jenis" class="scroll-link animate__animated animate__shakeY animate__slower animate__infinite infinite">
+                    <div class="text-white bg-black bg-opacity-30 p-5 rounded-full">
+                        <i class="fas fa-chevron-down "></i>
+                    </div>
+                </a>
+            </div>
+            
         </div>
     </section>
 
@@ -264,5 +272,25 @@
                 observer.observe(element);
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollLinks = document.querySelectorAll('.scroll-link');
+            
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    const offsetTop = targetElement.offsetTop;
+
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
     </script>
 @endsection
