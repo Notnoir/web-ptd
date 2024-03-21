@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="bg-gradient-to-b from-[#11001B] to-[#3f007d] min-h-screen flex items-center justify-center">
+    <section class="bg-gradient-to-b from-[#11001B] to-[#3f007d] min-h-screen flex flex-col items-center justify-center">
+        <h1 class="text-white font-semibold text-3xl animate__animated animate__fadeInDown animate__slow">Kelompok 3</h1>
         <div class="grid lg:grid-cols-2 gap-4 grid-cols-1 my-10 lg:w-1/2 md:w-2/4 w-3/6">
             <div class="animate__animated animate__fadeInLeft animate__slow max-w-sm bg-gray-200 border border-white rounded-lg dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex flex-col items-center pb-10 pt-4">
