@@ -48,70 +48,70 @@
                 <div class="owl-carousel owl-theme">
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Jaringan (Network Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Keamanan Jaringan (Network Security)</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Fokus pada perlindungan integritas, kerahasiaan, dan ketersediaan data yang bergerak melalui jaringan. Ini melibatkan teknologi seperti firewall, IDS (Intrusion Detection System), IPS (Intrusion Prevention System), dan VPN (Virtual Private Network).</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Perimeter (Perimeter Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Keamanan Perimeter (Perimeter Security)</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Melibatkan perlindungan terhadap akses yang tidak sah ke dalam jaringan atau sistem dari luar. Ini termasuk penggunaan firewall, gateway keamanan, dan kontrol akses yang ketat.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan End-Point (Endpoint Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Keamanan End-Point (Endpoint Security)</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Menyasar perlindungan pada perangkat individu seperti komputer pribadi, laptop, ponsel, dan perangkat IoT. Ini melibatkan penggunaan antivirus, antispyware, firewall pribadi, dan sistem deteksi ancaman end-point.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Aplikasi (Application Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Keamanan Aplikasi (Application Security)</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Memastikan bahwa perangkat lunak dan aplikasi yang digunakan oleh organisasi aman dari ancaman. Ini melibatkan pengujian keamanan perangkat lunak, pembaruan reguler, dan penerapan best practice dalam pengembangan perangkat lunak.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Data (Data Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Keamanan Data (Data Security)</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Melibatkan perlindungan terhadap data dari akses yang tidak sah atau kebocoran. Ini termasuk enkripsi data, manajemen hak akses, dan kebijakan retensi data.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Cloud (Cloud Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Keamanan Cloud (Cloud Security)</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Fokus pada melindungi data, aplikasi, dan infrastruktur yang disimpan di lingkungan cloud. Ini melibatkan enkripsi cloud, kontrol akses, dan pemantauan aktivitas cloud.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Mobile (Mobile Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Keamanan Mobile (Mobile Security)</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Mengamankan perangkat mobile dan aplikasi di lingkungan bisnis. Ini melibatkan kebijakan keamanan mobile, enkripsi perangkat mobile, dan pengelolaan perangkat.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Identitas dan Akses (Identity and Access Management - IAM)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Identity and Access Management - IAM</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Mengelola dan melindungi identitas pengguna dan memberikan hak akses yang sesuai. Ini termasuk autentikasi dua faktor, single sign-on, dan kontrol akses berbasis peran.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Manajemen Jaringan (Network Management Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Network Management Security</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Melibatkan perlindungan terhadap sistem manajemen jaringan dari ancaman yang dapat mempengaruhi fungsionalitas jaringan. Ini mencakup keamanan protokol manajemen dan monitoring jaringan.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="border-2 border-solid h-96 border-slate-500 py-12 px-5 rounded-2xl">
                         <div class="mx-3">
-                            <h3 class="text-2xl font-bold py-4 mb-3"><i class="fa-solid fa-globe mr-3"></i>Keamanan Fisik (Physical Security)</h3>
+                            <h3 class="text-2xl font-bold py-4 mb-3">Keamanan Fisik (Physical Security)</h3>
                             <p class="fixed top-40 leading-relaxed line-clamp-4 mb-7">Menjamin keamanan fisik perangkat keras, pusat data, dan infrastruktur komputer. Ini melibatkan kontrol akses fisik, pemantauan keamanan fisik, dan perlindungan terhadap pencurian atau kerusakan fisik.</p>
                             <a href="/about" class="fixed bottom-16 hover:text-gray-400">Read More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
